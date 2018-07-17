@@ -6,11 +6,26 @@
  */
 exports.SumOfASquare = SumOfASquare;
 
-function SumOfASquare(naturalNumbers){
+function SumOfASquare(naturalNumbers) {
   this.naturalNumbers = naturalNumbers;
+  
+  this.sumOfSquares = function() {
+    let squaredThenSummed = 0;
+    for (let i = 1; i <= naturalNumbers; i++) {
+      squaredThenSummed += i * i;
+    }
+    return squaredThenSummed;
+  }
+  
+  this.squareOfTheSums = function() {
+    let summedThenSquared = 0;
+    for (let i = 1; i <= naturalNumbers; i++) {
+      summedThenSquared += i;
+    }
+    summedThenSquared *= summedThenSquared;
+    return summedThenSquared;
+  }
 }
-
-// do work here
 
 // overwrite the object prototype, or add methods to the prototype
 // to satisfy the two method calls, sumOfSquares() and squareOfTheSums()
